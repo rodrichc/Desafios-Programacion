@@ -33,7 +33,6 @@ while total_paid < price:
 
     if coins in list_coins:
          total_paid += coins
-         print(f"Ha ingresado ${total_paid}, le falta ${price - total_paid}") 
     else:
      print("Ingrese una moneda valida")
 
@@ -41,7 +40,7 @@ if total_paid == price:
     print("El pago ha sido exacto. ¡Muchas gracias!")
 else:
     change = total_paid - price
-    print(f"Su vuelto es ${change}. Sus monedas: ")
+    print(f"Ha ingresado ${total_paid}, su vuelto es ${change}. Sus monedas: ")
     for change_coins in list_coins:
         while total_paid > price:
             if change_coins <= change:
