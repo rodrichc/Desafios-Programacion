@@ -6,12 +6,13 @@ otra palabra inicial.
 ● NO hace falta comprobar que ambas palabras existen.
 ● Dos palabras exactamente iguales no son anagrama.
 """
-
-word1 = input("Escriba una palabra: ")
 list1=[]
+list2=[]
+word1 = input("Escriba una palabra: ")
+
 while True:
     word2 = input("Escriba otra palabra: ")
-    list2=[]
+
     if len(word2) != len(word1):
         print(f"Introduzca una palabra de {len(word1)} caracteres.")
     else:
