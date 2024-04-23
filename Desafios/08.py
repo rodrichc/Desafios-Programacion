@@ -7,20 +7,19 @@ monedas hasta alcanzar el monto a pagar. Si el monto ingresado es mayor que el p
 del producto, el programa debe entregar las monedas de vuelto, una por una.
 """
 
-price_products = {"A": 270, "B": 340, "C": 390}
-list_coins = [10, 50, 100]
-total_coins = 0
-price = 0
+list_products = {"A": 270, "B": 340, "C": 390}
+list_coins = [100, 50, 10]
+total_paid = 0
 
 print("¡Bienvenido! Tiene 3 opciones de producto: ")
-print(price_products)
+print(list_products)
 print("")
 
 while True:
     product = input("Ingrese A, B o C para elegir un producto: ").upper() 
 
-    if product in price_products:
-        price = price_products[product]
+    if product in list_products:
+        price = list_products[product]
         print(f"El producto vale ${price}")
         print("")
         break
@@ -29,21 +28,25 @@ while True:
 
 print("Puede pagar con monedas de $10, $50 y $100")
 
-while total_coins < price:
+while total_paid < price:
     coins = int(input("Ingrese una moneda: "))
 
     if coins in list_coins:
-         total_coins += coins
-         print(f"Ha ingresado ${total_coins}, le falta ${price - total_coins}") 
+         total_paid += coins
+         print(f"Ha ingresado ${total_paid}, le falta ${price - total_paid}") 
     else:
      print("Ingrese una moneda valida")
 
-if total_coins == price:
+if total_paid == price:
     print("El pago ha sido exacto. ¡Muchas gracias!")
 else:
-    change = total_coins - price
+    change = total_paid - price
     print(f"Su vuelto es ${change}. Sus monedas: ")
     for change_coins in list_coins:
-        while total_coins > price:
-            print(f"${change_coins}")
-            total_coins -= change_coins
+        while total_paid > price:
+            if change_coins <= change:
+                total_paid -= change_coins
+                change -= change_coins
+                print(f"${change_coins}")
+            else: 
+                break
