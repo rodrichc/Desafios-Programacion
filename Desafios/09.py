@@ -23,7 +23,7 @@ for i in word1:
 for i in word2:
     list2.append(i)
 
-if set(list1) == set(list2):
+if list1 == list2:
     print(True)
 else:
     print(False)
