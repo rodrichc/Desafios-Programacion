@@ -13,8 +13,8 @@ word1 = input("Escriba una palabra: ")
 while True:
     word2 = input("Escriba otra palabra: ")
 
-    if len(word2) != len(word1):
-        print(f"Introduzca una palabra de {len(word1)} caracteres.")
+    if len(word2) != len(word1) or word1 == word2:
+        print(f"Introduzca palabras de misma longitud, pero no iguales.")
     else:
         break
 
@@ -23,7 +23,7 @@ for i in word1:
 for i in word2:
     list2.append(i)
 
-if list1 == list2:
+if set(list1) == set(list2):
     print(True)
 else:
     print(False)
