@@ -15,14 +15,15 @@ print("¡Bienvenido! Tiene 3 opciones de producto: ")
 print(list_products)
 print("")
 
-while True:
+aux_true = True
+while aux_true:
     product = input("Ingrese A, B o C para elegir un producto: ").upper() 
 
     if product in list_products:
         price = list_products[product]
         print(f"El producto vale ${price}")
         print("")
-        break
+        aux_true = False
     else: 
         print("¡Ingrese correctamente el producto!")
 

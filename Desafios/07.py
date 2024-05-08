@@ -5,21 +5,19 @@
 ● La sucesión termina al llegar a uno.
 Desarrolle un programa que entregue la secuencia de Collatz de un número entero:
 """
-while True:
-    try:
-        collatz = input("Ingrese un numero: ")
-        numero = int(collatz)
-        if numero > 1:
-            while numero > 1:
-                if (numero % 2) == 0:
-                    numero = int (numero / 2)
-                    collatz += " " + str(numero) 
-                else:
-                    numero = int((numero * 3) + 1)
-                    collatz += " " + str(numero)
-            print(collatz)
-        else:
-            print("¡Ingrese un numero mayor a 1!")
-        break
-    except IndexError:
-        print("¡Ingrese un numero!")
+aux_true = True
+while aux_true:
+    collatz = input("Ingrese un numero: ")
+    numero = int(collatz)
+    if numero > 1:
+        while numero > 1:
+            if (numero % 2) == 0:
+                numero = int (numero / 2)
+                collatz += " " + str(numero) 
+            else:
+                numero = int((numero * 3) + 1)
+                collatz += " " + str(numero)
+        print(collatz)
+        aux_true = False
+    else:
+        print("¡Ingrese un numero mayor a 1!")

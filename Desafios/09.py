@@ -10,13 +10,14 @@ list1=[]
 list2=[]
 word1 = input("Escriba una palabra: ")
 
-while True:
+aux_true = True
+while aux_true:
     word2 = input("Escriba otra palabra: ")
 
     if len(word2) != len(word1) or word1 == word2:
         print(f"Introduzca palabras de misma longitud, pero no iguales.")
     else:
-        break
+        aux_true = False
 
 for i in word1:
     list1.append(i)

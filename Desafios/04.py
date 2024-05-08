@@ -4,13 +4,14 @@ Desarrolle un programa que permita ingresar los tiempos de viaje de los tramos y
 entregue como resultado el tiempo total de viaje en formato horas:minutos.
 El programa deja de pedir tiempos de viaje cuando se ingresa un 0."""
 total_duration = 0
-while True:
+diff_0 = True
+while diff_0:
     duration_section = int(input("Ingrese duracion en minutos del tramo, 0 para terminar: "))
 
     if duration_section != 0:
         total_duration += duration_section
-    else:
-        break
+    if duration_section == 0:
+        diff_0 = False
 
 hours = total_duration // 60
 minutes = total_duration % 60
