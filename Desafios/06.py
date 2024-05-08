@@ -2,10 +2,12 @@
 triángulo rectángulo como el de más abajo con tantos renglones como indique el
 usuario. (IMAGEN)"""
 no_cumple = True
+
 while no_cumple:
     numero = input("Ingrese cantidad de reglones: ")
     renglon = ""
     respaldo = 0
+    
     if numero.isnumeric() and int(numero) > 0:
         numero = int(numero)
         for i in range(1, numero + 1):
