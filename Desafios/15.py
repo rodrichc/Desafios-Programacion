@@ -13,10 +13,12 @@ def obtener_autor(titulo, libros):
 
 def obtener_idioma(autor, autores):
     nacimiento, defuncion, idioma = autores[autor]
-    return idioma 
+    return idioma, defuncion 
 
-#def calcular_anios_antes_de_morir():
-
+def calcular_anios_antes_de_morir(anio_publicacion, defuncion):
+    anio, mes, dia = defuncion
+    resultado = anio - anio_publicacion
+    return resultado
 
 
 libros = [
@@ -39,10 +41,10 @@ autores = {
 titulo = input('Ingrese titulo del libro: ')
 
 autor, anio_publicacion = obtener_autor(titulo, libros)
-idioma = obtener_idioma(autor, autores)
-#anios_antes_morir = calcular_anios_antes_de_morir()
+idioma, defuncion = obtener_idioma(autor, autores)
+anios_antes_morir = calcular_anios_antes_de_morir(anio_publicacion, defuncion)
 
 print (f"El libro fue escrito en {idioma} por {autor}." )
-#print (f"El autor fallecio {anios_antes_morir} años después de haber escrito el libro.")
+print (f"El autor fallecio {anios_antes_morir} años después de haber escrito el libro.")
 
     
