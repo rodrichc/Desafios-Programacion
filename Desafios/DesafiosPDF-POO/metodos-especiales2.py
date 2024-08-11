@@ -31,6 +31,6 @@ lista_tareas = ListaTareas()
 lista_tareas.agregar_tarea(tarea1)
 lista_tareas.agregar_tarea(tarea2)
 
+print(tarea1)
 print(len(lista_tareas))
 
-print(tarea1)
