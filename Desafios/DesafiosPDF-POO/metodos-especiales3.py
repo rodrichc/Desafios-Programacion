@@ -13,11 +13,12 @@ class Carta:
       return f"Tu carta es: {self.valor} de {self.palo}"
    
    def __getitem__(self, item):
-      carta = [self.valor, self.palo]
+      carta = {"valor": self.valor, "palo": self.palo}
       return carta[item]
    
 
 mi_carta = Carta(4, "Basto")
 
 print(mi_carta)
-print(mi_carta[0])
+print(mi_carta["valor"])
+print(mi_carta["palo"])
